@@ -90,7 +90,8 @@ class RtallyProvider : MainAPI() {
                         links.add("${a.text().trim()}|${embedify(actual)}")
                     }
                 }
-[10/7/2026 4:48 PM] A: if (links.isNotEmpty()) {
+
+                if (links.isNotEmpty()) {
                     newEpisode(links.joinToString(" ; ")) {
                         this.name = "Episode $epNum"
                         this.season = 1
@@ -191,7 +192,7 @@ class RtallyProvider : MainAPI() {
         dlPageUrl: String,
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
-[10/7/2026 4:48 PM] A: ) {
+    ) {
         try {
             val doc = app.get(dlPageUrl, headers = headers).document
             val links = doc.select("a[target='_blank'][href], a[href*='download'], iframe").mapNotNull {
