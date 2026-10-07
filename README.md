@@ -7,7 +7,7 @@ Template for a [Cloudstream3](https://github.com/recloudstream) plugin repo
 **⚠️ Make sure you check "Include all branches" when using this template**
 
  
-## Getting started with writing your first plugin
+## Getting started with writing your first plugin 
 
 This template includes 1 example plugin.
 
