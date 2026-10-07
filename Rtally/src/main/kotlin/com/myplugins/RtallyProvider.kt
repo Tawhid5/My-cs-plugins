@@ -52,7 +52,7 @@ class RtallyProvider : MainAPI() {
             }
 
         return newMovieSearchResponse(title, href, TvType.Movie) {
-            this.posterUrl = fixUrlNull(poster)
+            this.posterUrl = poster
         }
     }
 
@@ -90,7 +90,7 @@ class RtallyProvider : MainAPI() {
                         links.add("${a.text().trim()}|${embedify(actual)}")
                     }
                 }
-                [10/7/2026 3:34 PM] A: if (links.isNotEmpty()) {
+[10/7/2026 4:48 PM] A: if (links.isNotEmpty()) {
                     newEpisode(links.joinToString(" ; ")) {
                         this.name = "Episode $epNum"
                         this.season = 1
@@ -109,7 +109,10 @@ class RtallyProvider : MainAPI() {
 
             doc.select("iframe").forEach { iframe ->
                 val src = iframe.attr("src")
-                if (src.isNotBlank()) links.add("Stream|${fixUrl(src)}")
+                if (src.isNotBlank()) {
+                    val fullSrc = if (src.startsWith("http")) src else "$mainUrl$src"
+                    links.add("Stream|$fullSrc")
+                }
             }
 
             doc.select("section a[href*='/download/'], a[href*='/download/']").forEach { a ->
@@ -141,7 +144,7 @@ class RtallyProvider : MainAPI() {
         return try {
             val raw = href.substringAfter("link=").substringBefore("&")
             URLDecoder.decode(raw, "UTF-8")
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             null
         }
     }
@@ -188,11 +191,11 @@ class RtallyProvider : MainAPI() {
         dlPageUrl: String,
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
-    ) {
+[10/7/2026 4:48 PM] A: ) {
         try {
             val doc = app.get(dlPageUrl, headers = headers).document
             val links = doc.select("a[target='_blank'][href], a[href*='download'], iframe").mapNotNull {
-[10/7/2026 3:34 PM] A: it.attr("src").ifBlank { it.attr("href") }
+                it.attr("src").ifBlank { it.attr("href") }
             }
             links.forEach { href ->
                 if (isValidVideoHost(href)) {
