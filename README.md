@@ -18,7 +18,7 @@ This template includes 1 example plugin.
    - Linux & Mac: `./gradlew ExampleProvider:make` or `./gradlew ExampleProvider:deployWithAdb`
 
 
-## Granting All Files Access on Newer Android Devices
+## Granting All Files Access on Newer Android Devices 
 
 For local plugin testing, you need to grant the app "All Files Access" on newer Android devices (Android 11 and above). Here’s how to do it:
 
