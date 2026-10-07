@@ -1,13 +1,7 @@
-plugins {
-    id("com.android.library")
-    id("kotlin-android")
-}
+kotlin
 
 cloudstream {
-    setPlugin(
-        name = "Rtally",
-        description = "Stream from Rtally",
-        authors = listOf("MyName"),
-        version = 1
-    )
+    description = "Stream from Rtally"
+    authors = listOf("MyName")
+    status = 1
 }
