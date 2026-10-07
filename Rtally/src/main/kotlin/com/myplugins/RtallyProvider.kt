@@ -145,7 +145,7 @@ class RtallyProvider : MainAPI() {
         return try {
             val raw = href.substringAfter("link=").substringBefore("&")
             URLDecoder.decode(raw, "UTF-8")
-        } catch (_: Exception) {
+        } catch (e: Exception) {
             null
         }
     }
@@ -182,7 +182,7 @@ class RtallyProvider : MainAPI() {
             } else if (linkUrl.isNotEmpty()) {
                 try {
                     loadExtractor(linkUrl, subtitleCallback, callback)
-                } catch (_: Exception) {}
+                } catch (e: Exception) {}
             }
         }
         return true
@@ -204,6 +204,6 @@ class RtallyProvider : MainAPI() {
                     loadExtractor(embedUrl, subtitleCallback, callback)
                 }
             }
-        } catch (_: Exception) {}
+        } catch (e: Exception) {}
     }
 }
