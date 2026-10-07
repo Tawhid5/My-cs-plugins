@@ -1,0 +1,38 @@
+[
+    {
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Korduene_Logo.png",
+        "fileHash": "sha256-800296fa8268958342fd3e92516082534bda91e51855b725d872959d0e75421f",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/Tawhid5/My-cs-plugins",
+        "fileSize": 7311,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Cloudburst",
+            "Luna712"
+        ],
+        "tvTypes": [
+            "Movie"
+        ],
+        "version": 1,
+        "internalName": "ExampleProvider",
+        "description": "Lorem ipsum",
+        "url": "https://raw.githubusercontent.com/Tawhid5/My-cs-plugins/builds/ExampleProvider.cs3",
+        "name": "ExampleProvider"
+    },
+    {
+        "fileHash": "sha256-a1ead5a1174387357f08a51a600830a4826b548c9db29faaeed10ce14dafcaa1",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/Tawhid5/My-cs-plugins",
+        "fileSize": 14963,
+        "status": 1,
+        "authors": [
+            "MyName"
+        ],
+        "version": -1,
+        "internalName": "Rtally",
+        "description": "Stream from Rtally",
+        "url": "https://raw.githubusercontent.com/Tawhid5/My-cs-plugins/builds/Rtally.cs3",
+        "name": "Rtally"
+    }
+]
