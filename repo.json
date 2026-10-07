@@ -1,0 +1,8 @@
+{
+  "name": "My Plugins",
+  "description": "Cloudstream plugins repository",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/Tawhid5/My-cs-plugins/builds/plugins.json"
+  ]
+}
